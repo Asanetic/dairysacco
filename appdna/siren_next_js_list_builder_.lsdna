@@ -22,7 +22,7 @@ $overwrite_dna_file = "yes"; // yes | no
    ========================= */
 eval(find_snippet("1171"));   // camelCase converter
 
-$table_config_file__ = "../appdna/dairysacco/system_users/tbl_attr/system_users_config.php";
+$table_config_file__ = "../appdna/dairysacco/sms/tbl_attr/sms_config.php";
 
 include($table_config_file__);
 
@@ -70,7 +70,7 @@ import { MosyAlertCard, MosyNotify ,closeMosyModal } from  '../../../MosyUtils/A
 import MosySnackWidget from '../../../MosyUtils/MosySnackWidget';
 
 //basic utils
-import { mosyScrollTo , deleteUrlParam, mosyFormInputHandler,mosyUrlParam  } from '../../../MosyUtils/hiveUtils';
+import { mosyScrollTo , deleteUrlParam, mosyFormInputHandler, mosyRightNow  } from '../../../MosyUtils/hiveUtils';
 
 //data control and processors
 import { inteprate".$camelcasetbl_prefix."FormAction, ".$camelcasetbl."ProfileData , popDeleteDialog, Inteprate".$camelcasetbl_prefix."Event } from '../dataControl/".$camelcasetbl_prefix."RequestHandler';

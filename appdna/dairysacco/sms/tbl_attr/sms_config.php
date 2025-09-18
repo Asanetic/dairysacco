@@ -175,7 +175,7 @@
      "list_title"=>"Phone Message history",
      "event_name"=>"InteprateSmsmessagesEvent",
      "event_path"=>"",     
-     "module_path"=>"./SmsMessagesList",     
+     "module_path"=>"./SmsmessagesList",     
      "list_url"=>"../smsbox/list",
      "profile_url"=>""
    ]

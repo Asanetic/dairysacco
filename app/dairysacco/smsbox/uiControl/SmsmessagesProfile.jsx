@@ -44,7 +44,7 @@ import apiRoutes from '../../AppRoutes/apiRoutes.json'
 
 
 //import SmsmessagesList component
-import SmsmessagesList from './SmsMessagesList';
+import SmsmessagesList from './SmsmessagesList';
 
 //button function imports
 import { sendPrimarySMS } from "../../AppCore/coreUtils";
