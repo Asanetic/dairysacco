@@ -86,3 +86,4 @@ export const sidebarConfig = [
   // Actions
   { type: "link", label: "My Account", icon: "fa fa-shield", href: (routes) => `${routes.cms}/users/list`, roles: [] },
 ];
+
