@@ -1,0 +1,13 @@
+//dna options== Digital Nexus Architecture (DNA)
+
+$dna_file_name="milk_collections_sms_add_cols"; 
+$create_dna="yes"; //yes | no; 
+$overwrite_dna_file="yes"; //yes | no 
+//dna options==
+
+alter_table($mysqliconn, $dbname, 'milk_collections', 'ADD column `recipient_phone` varchar(500) not null');
+alter_table($mysqliconn, $dbname, 'milk_collections', 'ADD column `message_body` varchar(500) not null');
+alter_table($mysqliconn, $dbname, 'milk_collections', 'ADD column `delivery_report` longtext not null');
+alter_table($mysqliconn, $dbname, 'milk_collections', 'ADD column `status` varchar(500) not null');
+
+

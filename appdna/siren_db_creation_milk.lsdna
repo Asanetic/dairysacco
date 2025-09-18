@@ -1,0 +1,55 @@
+
+//dna options== Digital Nexus Architecture (DNA) 
+$dna_file_name = "db_creation_milk"; 
+$create_dna = "yes"; //yes | no; 
+$overwrite_dna_file = "yes"; //yes | no 
+//dna options==
+
+
+//======= create table in db
+
+//=========== FARMERS TABLE
+$farmers_table_script = "
+`primkey` int(11) PRIMARY KEY AUTO_INCREMENT,
+`farmer_id` varchar(500) NOT NULL,
+`farmer_name` varchar(500),
+`farmer_number` varchar(500),
+`phone` varchar(500),
+`location` varchar(500),
+`date_registered` date
+";
+
+$farmers_table = 'farmers';
+create_table($mysqliconn, $dbname, $farmers_table, $farmers_table_script);
+
+
+//=========== GRADERS TABLE
+$graders_table_script = "
+`primkey` int(11) PRIMARY KEY AUTO_INCREMENT,
+`grader_id` varchar(500) NOT NULL,
+`grader_name` varchar(500),
+`phone` varchar(500),
+`society_id` varchar(500),
+`date_registered` date
+";
+
+$graders_table = 'graders';
+create_table($mysqliconn, $dbname, $graders_table, $graders_table_script);
+
+
+//=========== COLLECTIONS TABLE
+$collections_table_script = "
+`primkey` int(11) PRIMARY KEY AUTO_INCREMENT,
+`collection_id` varchar(500) NOT NULL,
+`farmer_id` varchar(500),
+`grader_id` varchar(500),
+`society_id` varchar(500),
+`collection_date` date NOT NULL,
+`session` varchar(500),  -- morning/evening
+`quantity_litres` varchar(500),
+`remarks` varchar(500)
+";
+
+$collections_table = 'milk_collections';
+create_table($mysqliconn, $dbname, $collections_table, $collections_table_script);
+

@@ -1,0 +1,9 @@
+//dna options== Digital Nexus Architecture (DNA)
+
+$dna_file_name="graders auth"; 
+$create_dna="yes"; //yes | no; 
+$overwrite_dna_file="yes"; //yes | no 
+//dna options==
+
+alter_table($mysqliconn, $dbname, 'graders', 'ADD column `password` varchar(500) not null');
+alter_table($mysqliconn, $dbname, 'graders', 'ADD column `username` varchar(500) not null');

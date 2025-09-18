@@ -1,0 +1,23 @@
+//dna options== Digital Nexus Architecture (DNA) 
+$dna_file_name = "SMSdb_creation_Script"; 
+$create_dna = "yes"; //yes | no; 
+$overwrite_dna_file = "yes"; //yes | no 
+//dna options==
+
+
+//======= create table in db
+
+//=========== SMS TABLE
+$sms_table_script = "
+`primkey` int(200) PRIMARY KEY AUTO_INCREMENT,
+`sms_id` varchar(100) NOT NULL,
+`recipient_phone` longtext NOT NULL, 
+`message_body` text NOT NULL,
+`status` varchar(50) DEFAULT 'pending',  -- pending | sent | failed | delivered
+`sent_by` varchar(100) NOT NULL,                  -- user/admin who triggered the SMS
+`sent_at` datetime DEFAULT CURRENT_TIMESTAMP,
+`delivery_report` text
+";
+
+$sms_table = 'sms';
+create_table($mysqliconn, $dbname, $sms_table, $sms_table_script);
