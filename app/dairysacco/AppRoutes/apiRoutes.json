@@ -37,5 +37,9 @@
     "systemusersmanagement": {
         "base": "/api/dairysacco/users/systemusersmanagement",
         "delete": "/api/dairysacco/users/delete"
+    },
+    "myaccountprofilemyaccount": {
+        "base": "/api/dairysacco/MyaccountProfile_My account/myaccountprofilemyaccount",
+        "delete": "/api/dairysacco/MyaccountProfile_My account/delete"
     }
 }

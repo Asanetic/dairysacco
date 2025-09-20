@@ -22,7 +22,7 @@ $overwrite_dna_file = "yes"; // yes | no
    ========================= */
 eval(find_snippet("1171"));   // camelCase converter
 
-$table_config_file__ = "../appdna/dairysacco/sms/tbl_attr/sms_config.php";
+$table_config_file__ = "../appdna/dairysacco/farmers/tbl_attr/farmers_config.php";
 
 include($table_config_file__);
 
@@ -70,7 +70,7 @@ import { MosyAlertCard, MosyNotify ,closeMosyModal } from  '../../../MosyUtils/A
 import MosySnackWidget from '../../../MosyUtils/MosySnackWidget';
 
 //basic utils
-import { mosyScrollTo , deleteUrlParam, mosyFormInputHandler, mosyRightNow  } from '../../../MosyUtils/hiveUtils';
+import { mosyScrollTo , deleteUrlParam, mosyFormInputHandler,mosyUrlParam  } from '../../../MosyUtils/hiveUtils';
 
 //data control and processors
 import { inteprate".$camelcasetbl_prefix."FormAction, ".$camelcasetbl."ProfileData , popDeleteDialog, Inteprate".$camelcasetbl_prefix."Event } from '../dataControl/".$camelcasetbl_prefix."RequestHandler';
@@ -97,7 +97,12 @@ import logo from '../../../img/logo/logo.png'; // outside public!
 import MosyHtmlEditor from '../../../MosyUtils/htmlEditor'
 
 //routes manager
-import apiRoutes from '../../AppRoutes/apiRoutes.json'
+///handle routes 
+import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
+
+// Use default base root (/)
+const apiRoutes = getApiRoutes();
+
 $profile_module_imports_
 $list_module_imports
 $import_profile_string
@@ -135,7 +140,12 @@ import logo from '../../../img/logo/logo.png'; // outside public!
 import ReactMarkdown from 'react-markdown';
 
 //routes manager
-import apiRoutes from '../../AppRoutes/apiRoutes.json'
+///handle routes 
+import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
+
+// Use default base root (/)
+const apiRoutes = getApiRoutes();
+
 $import_list_string
 
 //export list

@@ -4,15 +4,17 @@ import SystemusersmanagementList from '../uiControl/SystemusersmanagementList';
 
 import { InteprateSystemusersmanagementEvent } from '../dataControl/SystemusersmanagementRequestHandler';
     
+import { hiveRoutes } from '../../../appConfigs/hiveRoutes';
+
 export async function generateMetadata({ searchParams }) {
-  const mosyTitle = "System Users Management"//searchParams?.mosyTitle || "System Users Management";
+  const mosyTitle = "System Users Management "//searchParams?.mosyTitle || "System Users Management";
 
   return {
     title: mosyTitle ? decodeURIComponent(mosyTitle) : `System Users Management`,
     description: 'dairysacco System Users Management',
     
     icons: {
-      icon: "/logo.png"
+      icon: `${hiveRoutes.hiveBaseRoute}/logo.png`
     },    
   };
 }

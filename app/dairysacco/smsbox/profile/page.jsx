@@ -4,19 +4,20 @@ import SmsmessagesProfile from '../uiControl/SmsmessagesProfile';
 
 import { InteprateSmsmessagesEvent } from '../dataControl/SmsmessagesRequestHandler';
 
-    
+import { hiveRoutes } from '../../../appConfigs/hiveRoutes';
+
 export async function generateMetadata({ searchParams }) {
-  const mosyTitle = "SMS Messages profile"//searchParams?.mosyTitle || "SMS Messages";
+  const mosyTitle = "SMS Messages "//searchParams?.mosyTitle || "SMS Messages";
 
   return {
-    title: mosyTitle ? decodeURIComponent(mosyTitle) : `SMS Messages profile`,
+    title: mosyTitle ? decodeURIComponent(mosyTitle) : `SMS Messages`,
     description: 'dairysacco SMS Messages',
     
     icons: {
-      icon: "/logo.png"
+      icon: `${hiveRoutes.hiveBaseRoute}/logo.png`
     },    
   };
-}
+}    
                       
 
 export default function SmsmessagesMainProfilePage() {

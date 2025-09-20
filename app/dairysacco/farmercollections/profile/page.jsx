@@ -4,19 +4,20 @@ import FarmerscollectionhistoryProfile from '../uiControl/Farmerscollectionhisto
 
 import { InteprateFarmerscollectionhistoryEvent } from '../dataControl/FarmerscollectionhistoryRequestHandler';
 
-    
+import { hiveRoutes } from '../../../appConfigs/hiveRoutes';
+
 export async function generateMetadata({ searchParams }) {
-  const mosyTitle = "Farmers collection history profile"//searchParams?.mosyTitle || "Farmers collection history";
+  const mosyTitle = "Farmers collection history "//searchParams?.mosyTitle || "Farmers collection history";
 
   return {
-    title: mosyTitle ? decodeURIComponent(mosyTitle) : `Farmers collection history profile`,
+    title: mosyTitle ? decodeURIComponent(mosyTitle) : `Farmers collection history`,
     description: 'dairysacco Farmers collection history',
     
     icons: {
-      icon: "/logo.png"
+      icon: `${hiveRoutes.hiveBaseRoute}/logo.png`
     },    
   };
-}
+}    
                       
 
 export default function FarmerscollectionhistoryMainProfilePage() {

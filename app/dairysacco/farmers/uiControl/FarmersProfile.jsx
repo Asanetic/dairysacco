@@ -40,7 +40,12 @@ import logo from '../../../img/logo/logo.png'; // outside public!
 import MosyHtmlEditor from '../../../MosyUtils/htmlEditor'
 
 //routes manager
-import apiRoutes from '../../AppRoutes/apiRoutes.json'
+///handle routes
+import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
+
+// Use default base root (/)
+const apiRoutes = getApiRoutes();
+
 
 
 //import InteprateMilkcollectionsEvent Event manager

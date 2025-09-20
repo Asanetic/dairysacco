@@ -97,7 +97,12 @@ import logo from '../../../img/logo/logo.png'; // outside public!
 import MosyHtmlEditor from '../../../MosyUtils/htmlEditor'
 
 //routes manager
-import apiRoutes from '../../AppRoutes/apiRoutes.json'
+///handle routes 
+import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
+
+// Use default base root (/)
+const apiRoutes = getApiRoutes();
+
 $profile_module_imports_
 $list_module_imports
 $import_profile_string
@@ -135,7 +140,12 @@ import logo from '../../../img/logo/logo.png'; // outside public!
 import ReactMarkdown from 'react-markdown';
 
 //routes manager
-import apiRoutes from '../../AppRoutes/apiRoutes.json'
+///handle routes 
+import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
+
+// Use default base root (/)
+const apiRoutes = getApiRoutes();
+
 $import_list_string
 
 //export list

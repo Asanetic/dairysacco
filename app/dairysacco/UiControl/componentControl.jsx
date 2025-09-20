@@ -15,6 +15,9 @@ import { MosyExtendLiveSearch } from './customUI';
 import { useBillingAccountStatus } from '../../mosybilling/BillingMonitor';
 import { PremiumDataBtn } from '../../mosybilling/PremuimBtn';
 
+import { hiveRoutes } from '../../appConfigs/hiveRoutes';
+
+const DEFAULT_BASE = hiveRoutes.hiveBaseRoute; // default root if none passed
 
 function isComponentEnabled(tblName, actionType = 'cu') {
   const disabledDeleteTables = ["MyaccountList","MyaccountMainProfilePage","system_role_bundles", "system_users", "client_list", "affiliates", "services"];
@@ -343,16 +346,18 @@ export function MosyImageViewer({
   const isImage = (filePath) => /\.(jpg|jpeg|png|gif|bmp|webp)$/i.test(filePath);
   const borderStyle_ = defaultSize ? "" : "border";
 
-  const isMediaAvailable = media &&
-  typeof media === 'string' &&
-  media.trim() !== '' &&
-  !media.trim().endsWith('?media=');
+  var apiMedia = `${DEFAULT_BASE}${media}`
+
+  const isMediaAvailable = apiMedia &&
+  typeof apiMedia === 'string' &&
+  apiMedia.trim() !== '' &&
+  !apiMedia.trim().endsWith('?media=');
 
   // 👇 If the path already includes ?media= treat it as a full API URL
   const isQueryPath = isMediaAvailable && media.includes('?media=');
 
   const finalMediaPath = isQueryPath
-    ? media
+    ? apiMedia
     : isMediaAvailable
       ? `/storage/${media}` // Or whatever your direct storage path would be
       : defaultLogo;
@@ -360,11 +365,11 @@ export function MosyImageViewer({
     //  console.log(`isMediaAvailable`, media, isMediaAvailable)
 
   const handleImageClick = (path) => {
-    MosyCard("",<MosyImageViewer media={media} imageClass="product_image"/>);
+    MosyCard("",<MosyImageViewer media={apiMedia} imageClass="product_image"/>);
   };
 
   // 🖼️ Image File (with .jpg, .png etc.)
-  if (isMediaAvailable && isImage(media)) {
+  if (isMediaAvailable && isImage(apiMedia)) {
     return (
       <img
         src={finalMediaPath}
@@ -376,8 +381,8 @@ export function MosyImageViewer({
   }
 
   // 📎 If it's a non-image file (like .pdf, .doc etc.)
-  if (isMediaAvailable && !isImage(media) && !forceImg) {
-    const fileName = decodeURIComponent(media.split("/").pop());
+  if (isMediaAvailable && !isImage(apiMedia) && !forceImg) {
+    const fileName = decodeURIComponent(apiMedia.split("/").pop());
     return defaultSize ? (
       <i
         className="fa fa-paperclip cpointer"

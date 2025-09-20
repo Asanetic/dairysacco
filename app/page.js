@@ -1,6 +1,7 @@
 import AuthPage from "./auth/login/page";
 
 import mosyThemeConfigs from './appConfigs/mosyTheme';
+import { hiveRoutes } from "./appConfigs/hiveRoutes";
 
 export async function generateMetadata() {
   const appName = mosyThemeConfigs.mosyAppName || 'Mosy';
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     description: `${appName}`,
     
     icons: {
-      icon: "/logo.png"
+      icon: `${hiveRoutes.hiveBaseRoute}/logo.png`
     },
 
   };

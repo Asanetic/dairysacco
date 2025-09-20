@@ -42,7 +42,12 @@ import logo from '../../../img/logo/logo.png'; // outside public!
 import ReactMarkdown from 'react-markdown';
 
 //routes manager
-import apiRoutes from '../../AppRoutes/apiRoutes.json'
+///handle routes
+import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
+
+// Use default base root (/)
+const apiRoutes = getApiRoutes();
+
 
 
 //export list

@@ -32,7 +32,7 @@ export async function ProcessUserLogin(e) {
 
   const result = await mosyPostFormData({
     formId: 'mosy_form',
-    url: '/api/auth/login',
+    url: '/dairy/api/auth/login',
     method: 'POST',
     isMultipart: true,
   });

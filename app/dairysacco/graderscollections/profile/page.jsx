@@ -4,19 +4,20 @@ import GraderscollectionreportProfile from '../uiControl/Graderscollectionreport
 
 import { InteprateGraderscollectionreportEvent } from '../dataControl/GraderscollectionreportRequestHandler';
 
-    
+import { hiveRoutes } from '../../../appConfigs/hiveRoutes';
+
 export async function generateMetadata({ searchParams }) {
-  const mosyTitle = "Graders collection report profile"//searchParams?.mosyTitle || "Graders collection report";
+  const mosyTitle = "Graders collection report "//searchParams?.mosyTitle || "Graders collection report";
 
   return {
-    title: mosyTitle ? decodeURIComponent(mosyTitle) : `Graders collection report profile`,
+    title: mosyTitle ? decodeURIComponent(mosyTitle) : `Graders collection report`,
     description: 'dairysacco Graders collection report',
     
     icons: {
-      icon: "/logo.png"
+      icon: `${hiveRoutes.hiveBaseRoute}/logo.png`
     },    
   };
-}
+}    
                       
 
 export default function GraderscollectionreportMainProfilePage() {

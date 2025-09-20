@@ -9,7 +9,7 @@ const commonRoot = "/"; // Adjust to your base path or env var if needed
 
 
 const saAuthConfigs = {
-  sessionPrefix: "Corav2",
+  sessionPrefix: "DairySacco", // Unique prefix for session keys
   oauthTable: "system_users",
   primkey: "primkey",
 
@@ -29,13 +29,13 @@ const saAuthConfigs = {
   showCreateAccount: false, // true || false
 
   // Routes (UI component files/pages, not PHP scripts)
-  loginUrl: "login",
-  registerUrl: "register",
-  changePasswordUrl: "resetpassword",
-  resetPasswordUrl: "resetpassword",
+  loginUrl: `${hiveRoutes.auth}/login`,
+  registerUrl: `${hiveRoutes.auth}/register`,
+  changePasswordUrl: `${hiveRoutes.auth}/resetpassword`,
+  resetPasswordUrl: `${hiveRoutes.auth}/resetpassword`,
   
   //Api endpoints
-  createUserApi : "/api/cora/accounts/createaccount",
+  createUserApi : `${hiveRoutes.hiveBaseRoute}/api/cora/accounts/createaccount`,
 
   // Login page background + UI widget choice
   loginBgImage: bgimg.src,

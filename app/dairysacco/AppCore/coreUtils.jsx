@@ -1,69 +1,12 @@
 import { mosy_push_data, mosyBtoa, mosyGetElemVal, mosyPostData, mosyPostFormData, mosyUpdateUrlParam } from "../../MosyUtils/hiveUtils";
 import { MosyAlertCard, MosyNotify } from "../../MosyUtils/ActionModals";
-import apiRoutes from '../AppRoutes/apiRoutes.json'
-import { insertSmsmessages, updateSmsmessages } from "../smsbox/dataControl/SmsmessagesRequestHandler";
+
+import { getApiRoutes } from '../AppRoutes/apiRoutesHandler';
+
 import { updateMilkcollections } from "../milkcollections/dataControl/MilkcollectionsRequestHandler";
 
-export function convertLeadToClient(leadId) 
-{
-    // Logic to convert lead to client
-    const payload = { leadId:"200" };
-    
-    MosyNotify({message :"Sending payment request...", icon:"send" , id:"topmost"})
+const apiRoutes = getApiRoutes(); // Use the imported JSON directly
 
-    const conversionRes  = mosyPostData({url: apiRoutes.appcore.base, data: payload})
-
-    console.log('Lead converted successfully:', conversionRes);
-     
-    MosyNotify({message :"Request  super sent", icon:"send" , id:"topmost"})
-
-}
-
-
-export function addQuotationClass(leadId) 
-{
-    // Logic to convert lead to client
-    const payload = { leadId:"200" };
-    
-    MosyNotify({message :"Sending payment request...", icon:"send" , id:"topmost"})
-
-    const conversionRes  = mosyPostData({url: apiRoutes.appcore.base, data: payload})
-
-    console.log('Lead converted successfully:', conversionRes);
-     
-    MosyNotify({message :"Request  super sent", icon:"send" , id:"topmost"})
-
-}
-
-export function makeCall(leadId) 
-{
-    // Logic to convert lead to client
-    const payload = { leadId:"200" };
-    
-    MosyNotify({message :"Calling ...", icon:"phone" , iconColor:"text-dark", id:"topmost"})
-
-    const conversionRes  = mosyPostData({url: apiRoutes.leadsmanagement.base, data: payload})
-
-    console.log('Lead converted successfully:', conversionRes);
-     
-    MosyAlertCard({message:"Call onprogress ...", icon:"phone", iconColor:"text-success", yesLabel:"End call", noLabel:"",
-        onYes:()=>{
-            MosyNotify({message :"Call ended", icon:"check-circle", id:"topmost", addTimer:true, duration:4000})
-        },
-        
-        autoDismissOnClick:false, 
-        id:"topmost"})
-
-}
-
-
-// systemActions.js
-
-// ====================
-// Activities
-// ====================
-export function activities_sendReminder(activityId) {}
-export function activities_sendFollowupEmail(activityId) {}
 
 // ====================
 // Send SMS
@@ -178,58 +121,3 @@ export function formartGradersMessage(send, inputHandler)
  return message;
 
 }
-
-export function activities_generateReport(filters = {}) {}
-
-// ====================
-// Blog Posts
-// ====================
-export function blog_publish(postId) {}
-export function blog_schedule(postId, date) {}
-export function blog_promotePost(postId) {}
-export function blog_analyzeEngagement(postId) {}
-export function blog_runSEOCheck(postId) {}
-
-// ====================
-// Calls
-// ====================
-export function calls_startSession(callId) {}
-export function calls_sendSummaryMessage(callId) {}
-export function calls_analyzeConversions(filters = {}) {}
-//export function calls_logNotes(callId, notes) {}
-///export function calls_setFollowupReminder(callId) {}
-
-// ====================
-// Clients
-// ====================
-export function clients_sendEmail(clientId, templateId) {}
-export function clients_sendSMS(clientId, message) {}
-export function clients_notifyAccountManager(clientId) {}
-export function clients_viewDashboard(clientId) {}
-export function clients_generateReport(clientId, options = {}) {}
-
-// ====================
-// Content Schedule
-// ====================
-export function contentSchedule_push(scheduleId) {}
-export function contentSchedule_remindBeforePublishing(scheduleId) {}
-export function contentSchedule_trackStatus(scheduleId) {}
-export function contentSchedule_forecastEngagement(scheduleId) {}
-
-// ====================
-// Leads
-// ====================
-export function leads_sendNurtureEmail(leadId) {}
-export function leads_sendSMSCampaign(leadId, message) {}
-export function leads_setReminder(leadId, date) {}
-export function leads_analyzeSource(leadId) {}
-export function leads_convertToClient(leadId) {}
-
-// ====================
-// Messages
-// ====================
-export function messages_sendBulkEmail(messageId) {}
-export function messages_sendSMSBlast(messageId) {}
-export function messages_scheduleDrip(messageId, scheduleDate) {}
-export function messages_trackEngagement(messageId) {}
-export function messages_getConversationThread(leadId, clientId) {}

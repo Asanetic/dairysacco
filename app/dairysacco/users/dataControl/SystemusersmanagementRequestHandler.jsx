@@ -12,8 +12,11 @@ import { MosyFilterEngine } from '../../DataControl/MosyFilterEngine';
 import { customEventHandler } from '../../DataControl/customDataFunction';
 
 //routes manager
-import apiRoutes from '../../AppRoutes/apiRoutes.json'
+///handle routes 
+import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
 
+// Use default base root (/)
+const apiRoutes = getApiRoutes();
 
 //insert data
 export async function insertSystemusersmanagement() {

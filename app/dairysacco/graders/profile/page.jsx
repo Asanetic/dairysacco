@@ -4,19 +4,20 @@ import GraderslistProfile from '../uiControl/GraderslistProfile';
 
 import { InteprateGraderslistEvent } from '../dataControl/GraderslistRequestHandler';
 
-    
+import { hiveRoutes } from '../../../appConfigs/hiveRoutes';
+
 export async function generateMetadata({ searchParams }) {
-  const mosyTitle = "Graders List profile"//searchParams?.mosyTitle || "Graders List";
+  const mosyTitle = "Graders List "//searchParams?.mosyTitle || "Graders List";
 
   return {
-    title: mosyTitle ? decodeURIComponent(mosyTitle) : `Graders List profile`,
+    title: mosyTitle ? decodeURIComponent(mosyTitle) : `Graders List`,
     description: 'dairysacco Graders List',
     
     icons: {
-      icon: "/logo.png"
+      icon: `${hiveRoutes.hiveBaseRoute}/logo.png`
     },    
   };
-}
+}    
                       
 
 export default function GraderslistMainProfilePage() {

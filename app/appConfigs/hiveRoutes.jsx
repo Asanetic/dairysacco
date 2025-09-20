@@ -1,7 +1,8 @@
 // src/app/mosy_utils/hiveRoutes.js
 
 export const hiveRoutes = {
-  cms: '/dairysacco',      // relative to your Next.js routes
-  auth: '/auth'
+  hiveBaseRoute: '/dairy',
+  cms: '/dairy/dairysacco',      // relative to your Next.js routes
+  auth: '/dairy/auth'
   // add more as needed
 };

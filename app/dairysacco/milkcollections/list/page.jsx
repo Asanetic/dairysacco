@@ -4,15 +4,17 @@ import MilkcollectionsList from '../uiControl/MilkcollectionsList';
 
 import { InteprateMilkcollectionsEvent } from '../dataControl/MilkcollectionsRequestHandler';
     
+import { hiveRoutes } from '../../../appConfigs/hiveRoutes';
+
 export async function generateMetadata({ searchParams }) {
-  const mosyTitle = "Milk Collections"//searchParams?.mosyTitle || "Milk Collections";
+  const mosyTitle = "Milk Collections "//searchParams?.mosyTitle || "Milk Collections";
 
   return {
     title: mosyTitle ? decodeURIComponent(mosyTitle) : `Milk Collections`,
     description: 'dairysacco Milk Collections',
     
     icons: {
-      icon: "/logo.png"
+      icon: `${hiveRoutes.hiveBaseRoute}/logo.png`
     },    
   };
 }

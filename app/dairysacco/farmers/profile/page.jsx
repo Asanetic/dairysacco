@@ -4,19 +4,20 @@ import FarmersProfile from '../uiControl/FarmersProfile';
 
 import { InteprateFarmersEvent } from '../dataControl/FarmersRequestHandler';
 
-    
+import { hiveRoutes } from '../../../appConfigs/hiveRoutes';
+
 export async function generateMetadata({ searchParams }) {
-  const mosyTitle = "Farmers profile"//searchParams?.mosyTitle || "Farmers";
+  const mosyTitle = "Farmers "//searchParams?.mosyTitle || "Farmers";
 
   return {
-    title: mosyTitle ? decodeURIComponent(mosyTitle) : `Farmers profile`,
+    title: mosyTitle ? decodeURIComponent(mosyTitle) : `Farmers`,
     description: 'dairysacco Farmers',
     
     icons: {
-      icon: "/logo.png"
+      icon: `${hiveRoutes.hiveBaseRoute}/logo.png`
     },    
   };
-}
+}    
                       
 
 export default function FarmersMainProfilePage() {
