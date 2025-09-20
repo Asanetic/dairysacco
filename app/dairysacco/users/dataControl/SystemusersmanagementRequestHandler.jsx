@@ -127,9 +127,7 @@ export async function initSystemusersmanagementProfileData(rawQstr) {
 
   //add the following data in response
   const rawMutations = {
-         
-    last_seen : [],
-
+     
   }
   
 
@@ -220,9 +218,7 @@ export async function getSystemusersmanagementListData(qstr = "") {
   
   //add the following data in response
   const rawMutations = {
-         
-    last_seen : [],
-
+     
   }
   
   const encodedMutations = btoa(JSON.stringify(rawMutations));

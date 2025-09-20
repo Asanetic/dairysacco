@@ -1,0 +1,45 @@
+{
+    "farmers": {
+        "base": "/api/dairysacco/farmers/farmers",
+        "delete": "/api/dairysacco/farmers/delete"
+    },
+    "milkcollections": {
+        "base": "/api/dairysacco/milkcollections/milkcollections",
+        "delete": "/api/dairysacco/milkcollections/delete"
+    },
+    "graderslist": {
+        "base": "/api/dairysacco/graders/graderslist",
+        "delete": "/api/dairysacco/graders/delete"
+    },
+    "smsmessages": {
+        "base": "/api/dairysacco/smsbox/smsmessages",
+        "delete": "/api/dairysacco/smsbox/delete"
+    },
+    "appcore": {
+        "sendsms": "https://asanetic.com/sms/sendsms"
+    },
+    "farmerscollectionhistory": {
+        "base": "/api/dairysacco/farmercollections/farmerscollectionhistory",
+        "delete": "/api/dairysacco/farmercollections/delete"
+    },
+    "graderscollectionreport": {
+        "base": "/api/dairysacco/graderscollections/graderscollectionreport",
+        "delete": "/api/dairysacco/graderscollections/delete"
+    },
+    "myaccount": {
+        "base": "/api/dairysacco/accounts/myaccount",
+        "delete": "/api/dairysacco/accounts/delete"
+    },
+    "": {
+        "base": "/api/dairysacco//",
+        "delete": "/api/dairysacco//delete"
+    },
+    "systemusersmanagement": {
+        "base": "/api/dairysacco/users/systemusersmanagement",
+        "delete": "/api/dairysacco/users/delete"
+    },
+    "myaccountprofilemyaccount": {
+        "base": "/api/dairysacco/MyaccountProfile_My account/myaccountprofilemyaccount",
+        "delete": "/api/dairysacco/MyaccountProfile_My account/delete"
+    }
+}

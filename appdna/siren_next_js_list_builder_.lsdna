@@ -22,7 +22,7 @@ $overwrite_dna_file = "yes"; // yes | no
    ========================= */
 eval(find_snippet("1171"));   // camelCase converter
 
-$table_config_file__ = "../appdna/dairysacco/farmers/tbl_attr/farmers_config.php";
+$table_config_file__ = "../appdna/dairysacco/system_users/tbl_attr/system_users_config.php";
 
 include($table_config_file__);
 
@@ -96,7 +96,6 @@ import logo from '../../../img/logo/logo.png'; // outside public!
 
 import MosyHtmlEditor from '../../../MosyUtils/htmlEditor'
 
-//routes manager
 ///handle routes 
 import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
 
@@ -140,12 +139,7 @@ import logo from '../../../img/logo/logo.png'; // outside public!
 import ReactMarkdown from 'react-markdown';
 
 //routes manager
-///handle routes 
-import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
-
-// Use default base root (/)
-const apiRoutes = getApiRoutes();
-
+import apiRoutes from '../../AppRoutes/apiRoutes.json'
 $import_list_string
 
 //export list

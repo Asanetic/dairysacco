@@ -37,7 +37,7 @@
 
         // Extra table columns dont use for now 
         "custom_tbl_cols" => [
-           "system_users" => ["last_seen","auth_token","token_status","token_expiring_in"]
+           //"system_users" => ["last_seen","auth_token","token_status","token_expiring_in"]
         ],
 
         // Default values for profile | dont use for now
@@ -47,7 +47,7 @@
 
         // Custom query hooks for Next.js
         "custom_next_js_query_line_cols" => [
-            "last_seen" => [
+           /* "last_seen" => [
                 "function" => "await mosyGetRow('system_users', `last_seen`, `where user_id ='\${row?.user_id}'`)",
                 "args" => [],
                 "return" => "data_res?.last_seen"
@@ -56,7 +56,7 @@
                 "function" => "await mosyCountRows('system_users', `where token_status ='active' AND user_id ='\${row?.user_id}'`)",
                 "args" => [],
                 "return" => "data_res?.total"
-            ]
+            ]*/
         ]
     ],
 
