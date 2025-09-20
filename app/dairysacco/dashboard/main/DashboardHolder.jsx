@@ -11,8 +11,10 @@ import { mosyGetData,  } from '../../../MosyUtils/hiveUtils';
 import { MosyNotify , closeMosyModal } from '../../../MosyUtils/ActionModals';
 import MilkcollectionsList from '../../milkcollections/uiControl/MilkcollectionsList';
 import { InteprateMilkcollectionsEvent } from '../../milkcollections/dataControl/MilkcollectionsRequestHandler';
-import { hiveRoutes } from '../../../appConfigs/hiveRoutes';
 
+import { getApiRoutes } from '../../AppRoutes/apiRoutesHandler';
+
+const apiRoutes = getApiRoutes(); // Use the imported JSON directly
 
 export default function DashboardHolder() {
   const [chartData, setChartData] = useState([]);
@@ -23,7 +25,7 @@ export default function DashboardHolder() {
     async function fetchData() {
      MosyNotify({message : "Loading chart data" , icon:"line-chart", addTimer:false})
       const response = await mosyGetData({
-        endpoint: hiveRoutes.dashboard.admin,
+        endpoint: apiRoutes.dashboard.admin,
         params: {}
       });
 
