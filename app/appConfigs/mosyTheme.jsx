@@ -7,7 +7,7 @@ const commonRoot = ""; // Update this path if needed
 
 const mosyThemeConfigs = {
   // App Identity
-  mosyAppName: "Smart Sacco",
+  mosyAppName: "Smart Dairy Society",
   mosySystemName: "dairysacco",
   mosyAppLogo: logo.src,
   mosyAppLogoStyle: {
