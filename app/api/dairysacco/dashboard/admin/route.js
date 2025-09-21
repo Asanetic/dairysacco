@@ -70,8 +70,9 @@ export async function GET() {
       
       //card data 
       const card1 = await mosyFlexSelect({tbl:"farmers",colstr:btoa("count(*) as totals")})
-      const collectionToday = await mosyFlexSelect({tbl:"milk_collections",colstr:btoa("sum(quantity_litres) as totals")})
-      const collectionThisMonth = await mosyFlexSelect({tbl:"milk_collections",colstr:btoa("sum(quantity_litres) as totals")})
+      const allCollections = await mosyFlexSelect({tbl:"milk_collections",colstr:btoa("sum(quantity_litres) as totals")})
+      const collectionThisMonth = await mosyFlexSelect({tbl:"milk_collections",colstr:btoa("sum(quantity_litres) as totals"),q:btoa(`where DATE_FORMAT(collection_date, '%Y-%m') = DATE_FORMAT(CURDATE(), '%Y-%m')`)})  
+      const allgraders = await mosyFlexSelect({tbl:"graders",colstr:btoa("count(*) as totals")})
 
       //const totalGraders = await mosyFlexSelect({tbl:"graders",colstr:btoa("count(*) as totals")})
 
@@ -84,7 +85,7 @@ export async function GET() {
         },
         {
           title: 'Total Collections',
-          value: `${toNum((collectionToday?.data[0].totals || "0"))} Ltrs`,
+          value: `${toNum((allCollections?.data[0].totals || "0"))} Ltrs`,
           percentage: '',
           icon: "FaList",
         },
@@ -96,7 +97,7 @@ export async function GET() {
         },
         {
           title: 'Total graders',
-          value: `${toNum(collectionThisMonth?.data[0].totals || "0")} Ltrs`,
+          value: `${toNum(allgraders?.data[0].totals || "0")} Ltrs`,
           percentage: '',
           icon: "FaUsers",
         },
