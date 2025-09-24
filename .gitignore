@@ -17,7 +17,8 @@ phpmagicbits.php
 
 .history
 .git
-snippets_db
+snippets_db.sql
+
 jsondb.php
 hotspot.php
 hotspots.php
