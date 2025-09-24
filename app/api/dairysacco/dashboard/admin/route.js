@@ -110,5 +110,4 @@ export async function GET() {
         chart_data: chartData,
         cards_data: cardData,
       });
-
 }
