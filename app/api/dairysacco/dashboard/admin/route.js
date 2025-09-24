@@ -95,8 +95,8 @@ export async function GET() {
           percentage: '',
           icon: "FaCalendar",
         },
-        //
         
+        //
         {
           title: 'Graders',
           value: `${toNum(allgraders?.data[0].totals || "0")}`,
