@@ -1,7 +1,7 @@
 const MosyColumnFactory = {
 
    //-- farmers cols--//
-  farmers: ["farmer_id", "farmer_name", "farmer_number", "phone", "location", "date_registered", "hive_site_id", "hive_site_name"],
+  farmers: ["farmer_id", "farmer_name", "farmer_number", "phone", "location", "grader_id", "date_registered", "hive_site_id", "hive_site_name"],
 
    //-- graders cols--//
   graders: ["grader_id", "grader_name", "phone", "society_id", "date_registered", "hive_site_id", "hive_site_name", "password", "username"],

@@ -152,6 +152,7 @@ export default function FarmersList({ dataIn = {}, dataOut = {} }) {
             <th scope="col"><b>Phone Number</b></th>
             <th scope="col"><b>Location</b></th>
             <th scope="col"><b>Registration Date</b></th>
+            <th scope="col"><b>Allocated grader</b></th>
             
           </tr>
           
@@ -160,7 +161,7 @@ export default function FarmersList({ dataIn = {}, dataOut = {} }) {
           {stateItem.farmersLoading ? (
             <tr>
               <th scope="col">#</th>
-              <td colSpan="6" className="text-muted">
+              <td colSpan="7" className="text-muted">
                 <h5 className="col-md-12 text-center p-3 mb-5 text-muted"><i className="fa fa-spinner fa-spin"></i> Loading Farmers ...</h5>
               </td>
             </tr>
@@ -195,6 +196,7 @@ export default function FarmersList({ dataIn = {}, dataOut = {} }) {
                   <td scope="col"><span title={listfarmers_result.phone}>{magicTrimText(listfarmers_result.phone, 70)}</span></td>
                   <td scope="col"><span title={listfarmers_result.location}>{magicTrimText(listfarmers_result.location, 70)}</span></td>
                   <td scope="col"><span title={listfarmers_result.date_registered}>{mosyFormatDateOnly(listfarmers_result.date_registered)}</span></td>
+                  <td scope="col"><span title={listfarmers_result.grader_id}>{magicTrimText(listfarmers_result._graders_grader_name_grader_id, 70)}</span></td>
                   
                 </tr>
                 
@@ -205,7 +207,7 @@ export default function FarmersList({ dataIn = {}, dataOut = {} }) {
             
           ) : (
             
-            <tr><td colSpan="6" className="text-muted">
+            <tr><td colSpan="7" className="text-muted">
               
               
               <div className="col-md-12 text-center mt-4">

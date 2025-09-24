@@ -54,6 +54,9 @@ import {InteprateMilkcollectionsEvent} from '../../milkcollections/dataControl/M
 //import MilkcollectionsList component
 import MilkcollectionsList from '../../milkcollections/uiControl/MilkcollectionsList';
 
+//import FarmersList component
+import FarmersList from './FarmersList';
+
 
 
 // export profile
@@ -287,6 +290,22 @@ export default function FarmersProfile({ dataIn = {}, dataOut = {} }) {
                   cellOverrides={{additionalClass: "col-md-6 hive_data_cell "}}
                   />
                   
+                  <LiveSearchDropdown
+                  apiEndpoint={apiRoutes.graderslist.base}
+                  tblName="graders"
+                  parentTable="farmers"
+                  inputName="txt__graders_grader_name_grader_id"
+                  hiddenInputName="txt_grader_id"
+                  valueField="grader_id"
+                  displayField="grader_name"
+                  label="Allocated grader"
+                  defaultValue={{ grader_id: farmersNode?.grader_id || "", grader_name: farmersNode?._graders_grader_name_grader_id || "" }}
+                  onSelect={(id) => console.log("Just the ID:", id)}
+                  onSelectFull={(dataRes) =>  console.log("Data seleted")}
+                  onInputChange={handleInputChange}
+                  defaultColSize="col-md-6 hive_data_cell "
+                  context={{hostParent : hostParent}}
+                  />
                   
                   <div className="form-group col-md-6 hive_data_cell ">
                     <label className="d-none">Location</label>
@@ -381,30 +400,63 @@ export default function FarmersProfile({ dataIn = {}, dataOut = {} }) {
             />
           </section>
         )}
-      </div>
+        
+        <style jsx global>{`
+        .data_list_section {
+          display: none;
+        }
+        .bottom_tbl_handler{
+          padding-bottom:70px!important;
+        }
+        `}
+      </style>
+      {farmersNode?.primkey && (
+        <section className="col-md-12 m-0 bg-white pt-5 p-0 ">
+          <h5 className="col-md-12 text-left  border-bottom pl-lg-1 text-muted mb-3"> {`More farmers records`} </h5>
+          
+          <FarmersList
+          key={`${customQueryStr}-${localEventSignature}`}
+          dataIn={{
+            parentStateSetters : stateItemSetters,
+            parentUseEffectKey : localEventSignature,
+            showNavigationIsle:false,
+            showDataControlSections:false,
+            customQueryStr : '',
+            customProfilePath:""
+            
+          }}
+          
+          dataOut={{
+            setChildDataOut: InteprateFarmersEvent,
+            setChildDataOutSignature: (sig) => console.log("Signature changed:", sig),
+          }}
+          />
+        </section>
+      )}
     </div>
   </div>
+</div>
+
+
+{/* snack notifications -- */}
+{snackMessage &&(
+  <MosySnackWidget
+  content={snackMessage}
+  duration={5000}
+  type="custom"
+  onDone={() => {
+    stateItemSetters.setSnackMessage("");
+    stateItem.snackOnDone(); // Run whats inside onDone
+    deleteUrlParam("snack_alert")
+  }}
   
-  
+  />)}
   {/* snack notifications -- */}
-  {snackMessage &&(
-    <MosySnackWidget
-    content={snackMessage}
-    duration={5000}
-    type="custom"
-    onDone={() => {
-      stateItemSetters.setSnackMessage("");
-      stateItem.snackOnDone(); // Run whats inside onDone
-      deleteUrlParam("snack_alert")
-    }}
-    
-    />)}
-    {/* snack notifications -- */}
-    
-    
-    {/* ================== End Feature Section========================== ------*/}
-  </div>
   
+  
+  {/* ================== End Feature Section========================== ------*/}
+</div>
+
 );
 
 }

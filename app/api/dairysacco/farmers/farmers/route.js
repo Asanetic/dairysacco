@@ -140,6 +140,7 @@ export async function POST(FarmersRequest) {
     "phone" : "?", 
     "location" : "?", 
     "date_registered" : "?", 
+    "grader_id" : "?", 
     "hive_site_id" : "?", 
     "hive_site_name" : "?", 
 

@@ -127,7 +127,9 @@ export async function initFarmersProfileData(rawQstr) {
 
   //add the following data in response
   const rawMutations = {
-     
+               
+    _graders_grader_name_grader_id : [],
+
   }
   
 
@@ -218,7 +220,9 @@ export async function getFarmersListData(qstr = "") {
   
   //add the following data in response
   const rawMutations = {
-     
+               
+    _graders_grader_name_grader_id : [],
+
   }
   
   const encodedMutations = btoa(JSON.stringify(rawMutations));

@@ -74,7 +74,7 @@
         // Grouped inputs
         "form_input_segmentation_arr" => [
             "farmers" => [
-                "Farmer Details" => ["farmer_name","farmer_number","phone","location","date_registered"]
+                "Farmer Details" => ["farmer_name","farmer_number","phone","grader_id","location","date_registered"]
             ]
         ],
 
@@ -104,6 +104,7 @@
         "rename_cols_array" => [ 
             "farmer_name" => "Full Name",
             "farmer_number" => "Account Number",
+            "grader_id" => "Allocated grader",
             "phone" => "Phone Number",
             "location" => "Location",
             "date_registered" => "Registration Date"
@@ -129,7 +130,7 @@
         "custom_profile_col_data" => [], 
         "custom_profile_default_data" => [],
         "connection_cols" => [ 
-           //"society_id" => "societies:society_id:society_name:apiRoutes.societies.base"
+           "grader_id" => "graders:grader_id:grader_name:apiRoutes.graderslist.base"
         ]
     ]
   
@@ -176,7 +177,18 @@
      "module_path"=>"../../milkcollections/uiControl/MilkcollectionsList",     
      "list_url"=>"../milkcollections/list",
      "profile_url"=>"../milkcollections/profile",
-   ]
+   ],
+    
+   "farmerslist"=>[ 
+     "filter_str"=>"",
+     "module_name"=>"Farmers",
+     "list_title"=>"More farmers records",
+     "event_name"=>"InteprateFarmersEvent",
+     "event_path"=>"",     
+     "module_path"=>"./FarmersList",     
+     "list_url"=>"../farmers/list",
+     "profile_url"=>"",
+   ]    
    
   ];
    
